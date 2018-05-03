@@ -7,43 +7,43 @@
 
 # Indispensable
 
-* let / const / block scoped functions
-* Arrow functions + lexical this
-    * map / filter / forEach
+* ✔️ let / const / block scoped functions 
+* ✔️ Arrow functions + lexical this
+    * ✔️ map / filter / forEach
 * Classes
     * Héritage
     * Properties
     * sucre syntaxique
     * property shorthand {x, y}
     * Object literals
-* String interpolation
-    * Template strings
-* Destructuring
-    * Arrays
-    * Objects
-    * Valeurs par defaut
-    * En paramètres de fonction
-* Paramètres par défaut, rest / spread
-    * [ES2018] rest/spread for objects
-* Modules
 * API Promise
     * [ES2017] async / await
     * Error handling
     * [ES2018] finally
     * [ES2018] for await of
 * API fetch
-* ASI
-    * [ES2017] trailing comma in function args
+* Modules
+* Destructuring
+    * Arrays
+    * Objects
+    * Valeurs par defaut
+    * En paramètres de fonction
+* rest / spread
+    * [ES2018] rest/spread for objects
 
 # Souhaitable
 
+* Paramètres par défaut
+* String interpolation
+    * Template strings
+* ASI
+    * [ES2017] trailing comma in function args
 * Iterators / for..of
 * Generator functions
     * Tail call
 * Nouvelles collections 
     * Map
     * Set
-* Unicode support
 * Nouvelles API
     * String API
         * [ES2017] padStart, padEnd (⚠️ unicode)
@@ -54,7 +54,7 @@
     * Math API
         * [ES2016] opérateur **
     * Number API
-* Binary 0b / octal 0o
+* Unicode support
 * [ES2018] RegExp
     * dotAll (retour chariot)
     * Named Group Captures 
@@ -62,6 +62,7 @@
 
 # Possible
 
+* Binary 0b / octal 0o
 * Module loaders
 * Proxies
 * Symbols
