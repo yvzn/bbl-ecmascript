@@ -3,12 +3,15 @@
 * `Ctrl+A, Suppr`
 * Afficher `Ctrl+L`
 * Toujours utiliser un bloc
-```JavaScript
+```javascript
 {
     ...
 }
 ```
+note:
 * Recharger via le menu
+
+---
 
 # ? ECMAScript 
 * JavaScript = TM Oracle
@@ -17,11 +20,15 @@
 * ECMAScript = Standard (ECMA Intl.)
     * LiveScript => JS / ES5 => ES2015+
     
+---
+
 # `let` / `const`
 * Exemple `var` + accès hors bloc / hors fonction
 * Même exemple avec `let`
 * Motivation (variable globale)
 * block-scoped function
+
+---
 
 # Arrow function
 * Exemple de `map` avec `function (x) { }` 
@@ -29,10 +36,12 @@
 * filter, forEach
 * 🎁 trailing commas
 
+---
+
 # Lexical this
 * C'est quoi `this` ?
 * Perte du this
-```JavaScript
+```javascript
 {
     function Test() {
         this.valeurs = [2015, 2016, 2017]
