@@ -10,13 +10,13 @@
 * ✔️ let / const / block scoped functions 
 * ✔️ Arrow functions + lexical this
     * ✔️ map / filter / forEach
-* Classes
-    * Héritage
-    * Properties
-    * sucre syntaxique
-    * property shorthand {x, y}
-    * Object literals
-* API Promise
+* ✔ Classes
+    * ✔ Héritage
+    * ✔ Properties
+    * ✔ sucre syntaxique
+    * ✔ property shorthand {x, y}
+    * ✔ Object literals
+* ✔ API Promise
     * [ES2017] async / await
     * Error handling
     * [ES2018] finally
@@ -34,9 +34,9 @@
 # Souhaitable
 
 * Paramètres par défaut
-* String interpolation
+* 🎁 String interpolation
     * Template strings
-* ASI
+* 🎁 ASI
     * [ES2017] trailing comma in function args
 * Iterators / for..of
 * Generator functions
