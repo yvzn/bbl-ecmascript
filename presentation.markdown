@@ -30,7 +30,7 @@ note:
 ---
 
 # Arrow function
-* Exemple de `map` avec `function (x) { }` 
+* Exemple de `map` avec `function (x) { }` (Acteurs)
 * Même exemple avec  `() =>`
 * filter, forEach
 * 🎁 trailing commas
@@ -38,7 +38,7 @@ note:
 ---
 
 # Lexical this
-* C'est quoi `this` ?
+* `this` ?
 * Perte du this
 * `let obj = {}` avec valeurs, copies, initCopie avec forEach(function())
 * Ancienne methode avec self
@@ -49,7 +49,7 @@ note:
 ```javascript
 {
     let obj = {
-        valeurs: ['Chewie', 'Boba', 'Mace'],
+        acteurs: ['Oscar Isaac', 'Mark Hamill', 'Daisy Riley'],
         copies: [],
         
         initCopies: function () {
@@ -66,26 +66,24 @@ note:
 ---
 
 # Classes
-* Sucre syntaxique / fondamentalement → clarifier
-* Reprendre obj précédent + methode (syntaxe simplifiee)
+* clarifier la notion de classe
+* sucre syntaxique / pas de modif structurelle
 * `let obj = {}` avec nom, methode hello (syntaxe simplifiee)
-* conversion `class Jedi`, constructor
+* ⌛ property shorthand `{x, hello}`
+* conversion `class Actor`, constructor
 * héritage
 * properties
 ```javascript
-    {
-        get yodaName();
-        set yodaName(v); // ⌛
-    }
+    get yodaName();
+    set yodaName(v); // ⌛
 ```
-* ⌛ property shorthand `{x, y}`
 * ⌛ object literals `[ "baz" + quux() ]: 42`
 * 🎁 String interpolation 
 
 note:
 ```javascript
 {
-    class Jedi {       
+    class Actor {       
         constructor(name) {
             this.name = name
         }
@@ -102,7 +100,7 @@ note:
             this.name = v.split('').reverse().join('')
         }
     }
-    new Jedi('Obi-Wan').yodaName
+    new Actor('Frank Oz').yodaName
 }
 ```
 
@@ -110,8 +108,8 @@ note:
 
 # API Promise
 * Formalisation des promesses ($q.defer()) 
-* Appels asynchrones (vs. monothread)
-* Créer un service avec methode getPeople
+* But: prog asynchrone (vs. monothread)
+* Créer un service avec methode getActors
 * Utiliser setTimeout + return
 * Mise en place de la promesse (juste avec resolve)
 * Utilisation, reject
@@ -121,16 +119,36 @@ note:
 ```javascript
 {
     let service = {
-        getPeople() {
+        getActors() {
             return new Promise((resolve, _) => {
-                setTimeout(() => resolve(['Anakin', 'Leia', 'Padme']), 5000)
+                setTimeout(() => resolve(['Nathalie Portman', 'Carrie Fisher', 'Peter Mayhew']), 5000)
             })
         }
     }
     
     list = []
-    service.getPeople().then(data => list = data, err => list = [':-('])
+    service.getActors().then(data => list = data, err => list = [':-('])
     list
 }
 ```
+---
 
+# API fetch
+* Simplifier les appels réseaux asyncrones
+* Renvoie une promesse
+* Exemple fetch GET
+
+{
+  films = []
+  fetch('https://swapi.co/api/films/')
+    .then(response => response.json())
+    .then(data => films = data.results.map(f => f.title))
+  films
+}
+
+---
+
+# `async`/`await` [🚀 ES2017]
+* Simplifie le chaînage de Promise
+
+---

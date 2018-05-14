@@ -14,14 +14,14 @@
     * ✔ Héritage
     * ✔ Properties
     * ✔ sucre syntaxique
-    * ✔ property shorthand {x, y}
-    * ✔ Object literals
+    * ✔⌛ property shorthand {x, y}
+    * ✔⌛ Object literals
 * ✔ API Promise
-    * [ES2017] async / await
-    * Error handling
-    * [ES2018] finally
-    * [ES2018] for await of
-* API fetch
+    * ✔ [ES2017] async / await
+    * ⌛ Error handling
+    * ⌛ [ES2018] finally
+    * ⌛ [ES2018] for await of
+* ✔ API fetch
 * Modules
 * Destructuring
     * Arrays

@@ -15,8 +15,13 @@ $ git submodule update
 
 Pour lancer le serveur (par exemple)
 
+
 ```bash
-$ python -m http.server 8000
+$ npx http-server -p 8080
 ```
 
-puis ouvrir http://localhost:8000/
+```bash
+$ python -m http.server 8080
+```
+
+puis ouvrir http://localhost:8080/
