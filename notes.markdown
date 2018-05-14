@@ -1,15 +1,15 @@
-# Source
+# Sources
 
 1. https://github.com/lukehoban/es6features
 1. http://es6-features.org/
 1. https://github.com/getify/You-Dont-Know-JS
 1. https://medium.freecodecamp.org/here-are-examples-of-everything-new-in-ecmascript-2016-2017-and-2018-d52fa3b5a70e
-
+1. https://www.caniuse.com
 # Indispensable
 
-* ✔️ let / const / block scoped functions 
-* ✔️ Arrow functions + lexical this
-    * ✔️ map / filter / forEach
+* ✔ let / const / block scoped functions 
+* ✔ Arrow functions + lexical this
+    * ✔ map / filter / forEach
 * ✔ Classes
     * ✔ Héritage
     * ✔ Properties
@@ -22,18 +22,18 @@
     * ⌛ [ES2018] finally
     * ⌛ [ES2018] for await of
 * ✔ API fetch
-* Modules
-* Destructuring
-    * Arrays
-    * Objects
-    * Valeurs par defaut
-    * En paramètres de fonction
-* rest / spread
-    * [ES2018] rest/spread for objects
+* ✔ Modules
+* ✔ Décomposition
+    * ✔ Arrays
+    * ✔ Objects
+    * ✔ Valeurs par defaut
+    * ✔ En paramètres de fonction
+* ✔ rest / spread
+    * ✔ [ES2018] rest/spread for objects
 
 # Souhaitable
 
-* Paramètres par défaut
+* 🎁 Paramètres par défaut
 * 🎁 String interpolation
     * Template strings
 * 🎁 ASI
@@ -52,7 +52,7 @@
     * Array
         * [ES2016] includes
     * Math API
-        * [ES2016] opérateur **
+        * 🎁 [ES2016] opérateur **
     * Number API
 * Unicode support
 * [ES2018] RegExp

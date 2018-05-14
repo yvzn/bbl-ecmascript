@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <script type="module">
+    import { Actor, oz } from './actor.js'
+    import { Film } from './film.js'
+    
+    let film = new Film('Un nouvel export')
+    film.addActor(oz)
+    film.addActorByName('Mark Hamill')
+    
+    console.log(film.actors)
+    console.log(film.hello())
+    console.log(film.actors.map(a => a.hello()))
+    </script>
+</html>

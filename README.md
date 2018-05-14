@@ -1,11 +1,17 @@
 ﻿# bbl-ecmascript
-* 12@13 ECMAScript (2015 and beyond)
-* (nom temporaire 😉🤔)
+* 12@13 De JavaScript à ES2018
+* Première présentation le 22 mai 2018
 
 La présentation se trouve dans le fichier presentation.markdown
 
 ## Setup
-La présentation utilise [RevealJS](https://revealjs.com/) en tant que submodule git.
+
+L'affichage des slides utilise le framework de présentation
+[RevealJS](https://revealjs.com/)
+ajouté en tant que submodule git au projet.
+
+Pour récupérer le code source
+
 ```bash
 $ git clone https://github.com/yvzn/bbl-ecmascript.git
 $ cd bbl-ecmascript
@@ -13,15 +19,16 @@ $ git submodule init
 $ git submodule update
 ```
 
-Pour lancer le serveur (par exemple)
-
+Pour lancer le serveur (par exemple avec NodeJS)
 
 ```bash
 $ npx http-server -p 8080
 ```
 
+Autre solution (avec Python)
+
 ```bash
 $ python -m http.server 8080
 ```
 
-puis ouvrir http://localhost:8080/
+puis ouvrir http://localhost:8080/ dans le navigateur
