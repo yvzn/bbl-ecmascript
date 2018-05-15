@@ -31,4 +31,7 @@ Autre solution (avec Python)
 $ python -m http.server 8080
 ```
 
-puis ouvrir http://localhost:8080/ dans le navigateur
+Puis ouvrir <http://localhost:8080/?showNotes=separate-page> dans le navigateur
+
+Ou pour la version imprimable <http://127.0.0.1:8080/?print-pdf&showNotes=separate-page>
+

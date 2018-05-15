@@ -1,8 +1,9 @@
-# De JavaScript à ES2018
+# De JavaScript à ES.Next
 
----
+## 22 mai 2018
 
-# Antisèches:
+note:
+### Antisèches:
 * Ardoise `Shift + F4`
 * Afficher `Ctrl+L`
 * Utiliser un bloc
@@ -11,44 +12,67 @@
     // code
 }
 ```
-note:
+* Console `Ctrl+Shift+K`
 * _Recharger_ via le menu
 
 ---
 
 # ECMAScript ?
-* JavaScript = TM Oracle
-    * [Article TheRegister](https://www.theregister.co.uk/2018/04/18/oracle_ios_app_takedown_javascript/)
-    * [Article Dev.com](https://www.developpez.com/actu/198598/Oracle-peut-il-s-opposer-a-l-utilisation-du-terme-JavaScript-par-des-tiers-Le-createur-du-langage-s-exprime-sur-la-question/)
-* ECMAScript = Standard (ECMA Intl.)
-    * LiveScript → JS / ES5 → ES2015+
+* Standard defini par ECMA Intl.
+    * Netscape LiveScript
+    * JavaScript (&trade; Oracle)
+    * ES6 → ES2015+
+    * ES.Next
+
+---
+
+⏯️
 
 ---
 
 # `let` / `const`
-* Créer une `var` dans un bloc et accès hors du bloc / fonction
-* Même comportement avec `let`
-* Motivation (variable globale)
-* block-scoped function
-
----
-
-# Arrow function
-* Exemple de `map` avec `function (x) { }` (Acteurs)
-* Même exemple avec  `() =>`
-* filter, forEach
-* 🎁 trailing commas
-
----
-
-# Lexical this
-* `this` ? Perte du this ?
-* `let obj = {}` avec valeurs, copies, initCopie avec forEach(function())
-* Ancienne methode avec self
-* Remplacer par `(e) => this.copies.push(e)`
-* 🎁 ASI
+* Portée de `var` = `function`
+* Portée de bloc avec `let`
+* Constantes
 
 note:
+* Exemple de `var` dans un bloc / hors du bloc
+    * Comportement avec `function`
+    * Comportement de `let`
+* Motivation (vs. variable globale)
+* ⌛ function désormais block-scoped
+    * Exemple de décla. `test()` imbriquées
+
+---
+
+⏯️
+
+---
+
+# Arrow functions
+* Simplifier les fonctions anonymes
+* `function(x) {}` devient `(x) =>`
+
+note:
+* Exemple de `map` avec `function (x) { }` (Acteurs)
+    * Version avec  `() =>`
+    * filter, forEach
+* 🎁 trailing commas dans []
+
+---
+
+# Arrow functions
+* Ajout du lexical `this`
+    * Eviter la perte du `this`
+    
+note:
+* `this` = contexte exec. function 
+* Exemple `let obj = {}` avec valeurs, copies, initCopie avec forEach(function())
+    * Contournement avec `self` (`vm`, `$ctrl`)
+    * Remplacer par `(e) => this.copies.unshift(e)`
+* 🎁 ASI
+* 🎁 trailing commas dans {}
+
 ```javascript
 {
     let obj = {
@@ -68,23 +92,28 @@ note:
 
 ---
 
+⏯️
+
+---
+
 # Classes
-* clarifier la notion de classe
-* toujours basé sur `__proto__`
-* pas de modif structurelle := sucre syntaxique
-* `let obj = {}` avec nom, methode hello (syntaxe simplifiee)
-* ⌛ property shorthand `{x, hello}`
-* conversion `class Actor`, `constructor`
-* héritage
-* properties
-```javascript
-    get yodaName();
-    set yodaName(v); // ⌛
-```
-* ⌛ object literals `[ "baz" + quux() ]: 42`
-* 🎁 String interpolation
+* Clarifier la notion existante
+    * toujours basé sur `__proto__`
+    * pas de modif structurelle
+* Héritage
+* Propriétés
 
 note:
+* Exemple `let obj = {}` avec nom, hello()
+    * syntaxe simplifiee pour function
+    * 🎁 String interpolation
+    * ⌛ property shorthand si var existe déjà `{x, hello}` ***
+* conversion `class Actor`, `constructor`
+    * `get yodaName();`
+    * `set yodaName(v);`
+* `extends`, `super`
+* ⌛ object literals `[ "name" + foo() ]: 42`
+
 ```javascript
 {
     class Actor {
@@ -110,16 +139,21 @@ note:
 
 ---
 
+⏯️
+
+---
+
 # API Promise
-* Formalisation des promesses (`$q.defer()`)
-* Objectif: prog asynchrone (vs. monothread)
-* Créer un service avec methode getActors
-* Utiliser `setTimeout` + return
-* Mise en place de la promesse (juste avec resolve)
-* Utilisation, reject
-* ⌛ `Promise.all`
+* Formalisation des promesses (lib. `$q`)
+* Prog. asynchrone (vs. monothread)
 
 note:
+* Exemple de service avec methode `getActors`
+    * Utiliser `setTimeout` + return
+    * Mise en place de la promesse (juste avec resolve)
+    * Utilisation, reject
+    * ⌛ `Promise.all`
+
 ```javascript
 {
     let service = {
@@ -130,67 +164,102 @@ note:
         }
     }
 
-    list = []
-    service.getActors().then(data => list = data, err => list = [':-('])
-    list
+    service.getActors().then(data => console.log(data), err => console.error(err))
 }
 ```
 ---
 
 # API fetch
-* Simplifier les appels réseaux asyncrones
-* Renvoie une promesse
-* Exemple avec `{method: 'POST'}`
-
+* Simplifier les appels réseaux
+* Asynchrone
+    * Renvoie une promesse
+    
 note:
+* Exemple avec [Swapi](https://swapi.co/api/films/)
+    * avec `{method: 'POST'}`
+
 ```javascript
 {
-  films = []
   fetch('https://swapi.co/api/films/')
     .then(response => response.json())
-    .then(data => films = data.results.map(f => f.title))
-  films
+    .then(data => console.log(data.results.map(f => f.title)))
 }
 ```
 
 ---
 
-# `async`/`await` [🚀 ES2017]
+⏯️
+
+---
+
+# `async`/`await`
+* [🚀 ES2017]
 * Simplifie le chaînage de Promise
+* Mais pas que
+
+note:
+* `then()` successifs ou imbriqués
+* Exemple avec fetch + response.json
+
+```javascript
+{
+  async function getFilms() {
+    let response = await fetch('https://swapi.co/api/films/')
+    let data = await response.json()
+    return data.results.map(f => f.title)
+  }
+  
+  getFilms().then(data => console.log(data))
+}
+```
+
+---
+
+⏯️
 
 ---
 
 # Modules
-
 * _n_ fichiers de script = _n_ balises `<script>`
-* Risque de collision de noms
+* Risque de collision de noms (librairies)
 * Utilisation d'un bundler (webpack...)
-* Modules ES, `import`
-    * Supporté par les navigateurs (`./`) quelques restrictions
-    * Mode strict par défaut
 
-* Reprendre la classe `Actor` + hello dans une fonction + export
-* Créer une classe `Film` avec une liste d'acteurs + hello
-* Créer un service Swapi
-* Imports entre scripts
-    * named import {}, export default
-* Import dans le navigateur
-    * `<script type=module>`
+---
+
+# Modules
+* Modules ES, `import`
+* Supporté par les navigateurs 
+* Mode strict par défaut
+
+note:
+* Bcp de code
+* quelques restrictions (`./`) 
+* Exemple classe `Actor` + hello dans une fonction + export
+    * une classe `Film` avec une liste d'acteurs + hello
+    * Import entre scripts
+        * named import {}, export default
+    * Import dans le navigateur
+        * `<script type=module>`
+
+---
+
+⏯️
 
 ---
 
 # Affectation par décompostion
+* Prog. fonctionnelle
 
-* Cas d'un tableau `let [a, b, c] = array`
+note:
+* Exemple d'un tableau `let [a, b, c] = array`
     * Swap deux valeurs `[a, b] = [b, a]`
     * Ignorer `let [a, , c] = array`
     * Par défaut `let [a, b, c = 3] = array`
     * Fail-soft `let [a, b, c = 3] = [0]`
-* Cas d'un object `let { name, age } = getActor()`
+* Exemple d'un object `let { name, age } = getActor()`
     * `let { n:name, a:age } = getActor()`
-* Cas d'un paramètre de fonction `function ([a, b])`
+* Exemple d'un paramètre de fonction `function ([a, b])`
 
-note:
 ```javascript
 {
   function test([first, second]) {
@@ -203,17 +272,28 @@ note:
 
 ---
 
+⏯️
+
+---
+
 # Fonctions++
 
-* 🎁 Paramètres par défaut de fonction
+* 🎁 Paramètres par défaut 
 * [🚀 ES2017] trailing comma in function args
 
 ---
 
-# Opérateurs Rest / Spread
+⏯️
 
+---
+
+# Opérateurs Rest / Spread
+* Prog. fonctionnelle
+
+note:
 * Rest `...`
     * exemple réalisateur, producteur, acteurs
+    * 🎁 Utiliser un Set
 * Spread `...`
     * Exemple inverse
     * Concaténation de listes `[a, b, ...list]`
@@ -222,7 +302,6 @@ note:
 * Exemple somme des carrés d'une liste
     * [🚀 ES2016] opérateur **
 
-note:
 ```javascript    
 {
   function générique(réalisateur, producteur, ...acteurs) {
@@ -234,7 +313,7 @@ note:
   
   générique('Irvin Kershner', 'George Lucas', 'Mark Hamill', 'Carrie Fisher', 'Harrison Ford')
 
-  let whoSwho = ['Irvin Kershner', 'George Lucas', 'Mark Hamill', 'Carrie Fisher', 'Harrison Ford']
+  let whoSwho = new Set(['Irvin Kershner', 'George Lucas', 'Mark Hamill', 'Carrie Fisher', 'Harrison Ford'])
   générique(...whoSwho)
 }
 
@@ -247,3 +326,33 @@ note:
   somme(1, 2, 3, 4)
 }
 ```
+
+---
+
+⏯️
+
+---
+
+# ⌛ Et aussi...
+
+* Object.assign()
+* Unicode
+* Generator functions
+
+---
+
+# Références
+
+1. [ES6 features](https://github.com/lukehoban/es6features)
+1. [ES6 features](http://es6-features.org/)
+1. [ES2016 -> ES2018](https://medium.freecodecamp.org/here-are-examples-of-everything-new-in-ecmascript-2016-2017-and-2018-d52fa3b5a70e)
+1. [You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)
+1. [CanIuse.com](https://www.caniuse.com)
+
+---
+
+💬
+
+---
+
+✔

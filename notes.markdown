@@ -5,6 +5,7 @@
 1. https://github.com/getify/You-Dont-Know-JS
 1. https://medium.freecodecamp.org/here-are-examples-of-everything-new-in-ecmascript-2016-2017-and-2018-d52fa3b5a70e
 1. https://www.caniuse.com
+
 # Indispensable
 
 * ✔ let / const / block scoped functions 
@@ -43,7 +44,7 @@
     * Tail call
 * Nouvelles collections 
     * Map
-    * Set
+    * 🎁 Set
 * Nouvelles API
     * String API
         * [ES2017] padStart, padEnd (⚠️ unicode)
