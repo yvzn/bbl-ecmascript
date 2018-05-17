@@ -18,28 +18,32 @@ note:
 
 ## Références
 
-1. [ES6 features](https://github.com/lukehoban/es6features)
-1. [ES6 features (2)](http://es6-features.org/)
+1. [ES6 features.org](http://es6-features.org/)
+1. [lukehoban](https://github.com/lukehoban/es6features)
 1. [ES2016 ➡ ES2018](https://medium.freecodecamp.org/here-are-examples-of-everything-new-in-ecmascript-2016-2017-and-2018-d52fa3b5a70e)
 
 ---
 
-<!-- .slide: data-background-image="resource/milky-way.jpg" class="yellow" -->
+## ECMAScript
 
-# ECMAScript
+* Standard defini par ECMA Intl.
+    * LiveScript (Netscape)
+    * JavaScript (&trade; Oracle)
+    * ES
 
 note:
 * C'est quoi ce nom ?
-* C'est quoi ces versions ?
 
 ---
 
 ## ECMAScript ?
-* Standard defini par ECMA Intl.
-    * Netscape LiveScript
-    * JavaScript (&trade; Oracle)
-    * ES6 ➡ ES2015
-    * ES.Next
+
+* JS1.5 ➡ ES5
+* ES6 ➡ ES2015
+* ES.Next
+
+note:
+* C'est quoi ces versions ?
 
 ---
 
@@ -50,12 +54,17 @@ note:
 ---
 
 ## `let` / `const`
-* Portée de `var` = `function` 😞
+
+* Portée de `var` : `function` 😞
 * 👍 Portée de bloc avec `let`
 * Constantes
 
+---
+
+👨🏽‍💻
+
 note:
-* 💻 `var` dans un bloc / hors du bloc
+* 💻 `{var }` visible hors du bloc
     * Comportement avec `function`
     * `(function(){})()`
     * Comportement de `let`
@@ -65,27 +74,22 @@ note:
 
 ---
 
-👨🏽‍💻
-
----
-
 ## Classes
+
 * Clarifier la notion existante
     * basé sur `__proto__`
     * pas de modif structurelle
-* Héritage
-* Propriétés
+
+---
+
+👨🏽‍💻
 
 note:
-* 💻 `let obj = {}` avec nom, hello()
+* 💻 `let obj = {}` avec nom, `hello()`
     * syntaxe simplifiee de `function`
     * 🎁 String interpolation
     * ⌛ property shorthand si var existe déjà `{x, hello}`
 * conversion `class Actor`, `constructor`
-    * `get yodaName();`
-    * `set yodaName(v);`
-* `extends`, `super`
-* ⌛ object literals `[ "name" + foo() ]: 42`
 
 ```javascript
 {
@@ -109,14 +113,31 @@ note:
     new Actor('Frank Oz').yodaName
 }
 ```
+---
+
+## Classes
+
+* Propriétés
+* Héritage
 
 ---
 
 👨🏽‍💻
 
+note:
+* `get yodaName();`
+* `set yodaName(v);`
+* `extends`, `super`
+* ⌛ object literals `[ "name" + foo() ]: 42`
+
+---
+
+🧘🏽
+
 ---
 
 ## Modules
+
 * _n_ fichiers de script = _n_ balises `<script>` 😞
 * Risque de collision de noms (librairies)
 * Utilisation d'un bundler (webpack...)
@@ -127,6 +148,7 @@ note:
 ---
 
 ## Modules
+
 * 👍 Modules ES
     * `import`, `export`
 * Supporté par les navigateurs 
@@ -134,12 +156,18 @@ note:
 
 note:
 * Quelques restrictions (`./`) 
+
+---
+
+👨🏽‍💻
+
+note:
 * 💻 classe `Actor` + hello dans une fonction + export
-    * une classe `Film` avec une liste d'acteurs + hello
-    * Import entre scripts
-        * named import {}, export default
-    * Import dans le navigateur
-        * `<script type=module>`
+* une classe `Film` avec une liste d'acteurs + hello
+* Import entre scripts
+    * named import {}, export default
+* Import dans le navigateur
+    * `<script type=module>`
 
 ---
 
@@ -150,8 +178,13 @@ note:
 ---
 
 ## Arrow functions
+
 * Simplifier les déclarations anonymes
 * `function(x) {}` devient 👍 `(x) =>`
+
+---
+
+👨🏽‍💻
 
 note:
 * 💻 `Array.map` avec `function (x) { }` (Acteurs)
@@ -162,10 +195,17 @@ note:
 ---
 
 ## Lexical `this`
+
 * Eviter la perte du contexte
-    
+  
 note:
 * `this` = contexte exec. function 
+  
+---
+
+👨🏽‍💻
+
+note:
 * 💻 `let obj = {}` avec valeurs, copies, initCopie avec forEach(function())
     * Contournement avec `self` (`vm`, `$ctrl`)
     * Remplacer par `(e) => this.copies.unshift(e)`
@@ -191,11 +231,11 @@ note:
 
 ---
 
-👨🏽‍💻
+## Décompostion
 
 ---
 
-## Décompostion
+👨🏽‍💻
 
 note:
 * 💻 tableau `let [a, b, c] = array`
@@ -219,7 +259,7 @@ note:
 
 ---
 
-👨🏽‍💻
+🧘🏽
 
 ---
 
@@ -235,17 +275,22 @@ note:
 ---
 
 ## Rest / Spread
+
 * Opérateur `...`
 * Autres paramètres (rest)
 * Itération (spread)
+  
+---
+
+👨🏽‍💻
 
 note:
 * Rest `...`
-    * 💻 réalisateur, producteur, acteurs
-    * 🎁 Utiliser un Set
+    * 💻 `generique()` réalisateur, producteur, ...acteurs
 * Spread `...`
-    * 💻 inverse
-    * Concaténation de listes `[a, b, ...list]`
+    * 💻 passer une liste
+    * 🎁 Utiliser un Set
+* Concaténation de listes `[a, b, ...list]`
     * Clonage `[...list]`
     * Marche aussi pour les string, Map, Set, les objets `{...obj}` [🚀 ES2018]
 * 💻 somme des carrés d'une liste
@@ -268,8 +313,9 @@ note:
 
 {
   function somme(a, ...tail) {
-    if (!tail.length) return 0
-    return a ** 2 + somme(...tail)
+    let f = x => x ** 2
+    if (!a) return 0
+    return f(a) + somme(...tail)
   }
   
   somme(1, 2, 3, 4)
@@ -280,13 +326,18 @@ note:
 
 <!-- .slide: data-background-image="resource/hallway.jpg" class="dark-bg" -->
 
-# API
+# API ++
 
 ---
 
 ## Promise
+
 * Formalisation des promesses (lib. `$q`)
 * Prog. asynchrone (vs. monothread)
+
+---
+
+👨🏽‍💻
 
 note:
 * 💻 service avec methode `getActors`
@@ -308,17 +359,19 @@ note:
     service.getActors().then(data => console.log(data), err => console.error(err))
 }
 ```
----
-
-👨🏽‍💻
 
 ---
 
 ## fetch
+
 * Simplifier les requêtes distantes
 * Asynchrone
     * Renvoie une promesse
-* Bye XHR 😞
+* Bye XHR 👋
+
+---
+
+👨🏽‍💻
     
 note:
 * 💻 avec [Swapi](https://swapi.co/api/films/)
@@ -334,14 +387,15 @@ note:
 
 ---
 
-👨🏽‍💻
-
----
-
 ## `async`/`await`
+
 * [🚀 ES2017]
 * Simplifie le chaînage de Promise
 * Mais pas que
+
+---
+
+👨🏽‍💻
 
 note:
 * `then()` successifs ou imbriqués
@@ -369,7 +423,7 @@ note:
 
 * `Object.assign()`
 * String
-    * {repeat,startsWith,...}
+    * {`repeat`, `startsWith`, ...}
 * Unicode support
 * Generator functions
     * `yield`
@@ -383,8 +437,14 @@ note:
 
 ---
 
-💬
+# 💬
 
 ---
 
-✔
+<!-- .slide: data-background-image="resource/milky-way.jpg" class="yellow" -->
+
+# ECMAScript
+
+---
+
+# ✔

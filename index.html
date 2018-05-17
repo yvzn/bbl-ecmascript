@@ -16,7 +16,16 @@
         
         <style type="text/css">
             .dark-bg h1 { color: #fff }
-            .yellow h1 { text-shadow: -5px -5px 2px #ff0, 5px -5px 2px #ff0, -5px 5px 2px #ff0, 5px 5px 2px #ff0; letter-spacing: 15px; }
+            .yellow h1 {
+                text-shadow: -3px -3px 0 #ff0, 3px -3px 0 #ff0, -3px 3px 0 #ff0, 3px 3px 0 #ff0;
+                letter-spacing: -13px;
+                animation: zoom-out 5s ease-in 0s 1 normal forwards;
+                transform: none;
+            }
+            @keyframes zoom-out {
+                from { transform: scale(10, 10) }
+                to { transform: translateY(166%) }
+            }
         </style>
 	</head>
 	<body>
