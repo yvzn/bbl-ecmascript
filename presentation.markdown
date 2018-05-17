@@ -1,6 +1,6 @@
 # JS ➡ ES.Next
 
-<https://github.com/yvzn/bbl-ecmascript>
+[[github]](https://github.com/yvzn/bbl-ecmascript)
 
 note:
 * Ardoise `Shift + F4`
@@ -362,6 +362,10 @@ note:
 
 ---
 
+🧘🏽
+
+---
+
 ## fetch
 
 * Simplifier les requêtes distantes
@@ -390,7 +394,7 @@ note:
 ## `async`/`await`
 
 * [🚀 ES2017]
-* Simplifie le chaînage de Promise
+* Simplifie le chaînage de promesses
 * Mais pas que
 
 ---
@@ -434,16 +438,15 @@ note:
 
 1. [CanIuse.com](https://www.caniuse.com)
 1. [You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)
-
----
-
-# 💬
-
 ---
 
 <!-- .slide: data-background-image="resource/milky-way.jpg" class="yellow" -->
 
 # ECMAScript
+
+---
+
+# 💬
 
 ---
 
