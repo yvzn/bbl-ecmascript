@@ -40,6 +40,7 @@ note:
 
 * JS1.5 ➡ ES5
 * ES6 ➡ ES2015
+* ES2015 ➡ ES2017
 * ES.Next
 
 note:
@@ -57,7 +58,7 @@ note:
 
 * Portée de `var` : `function` 😞
 * 👍 Portée de bloc avec `let`
-* Constantes
+* 👍 Constantes
 
 ---
 
@@ -66,7 +67,6 @@ note:
 note:
 * 💻 `{var }` visible hors du bloc
     * Comportement avec `function`
-    * `(function(){})()`
     * Comportement de `let`
 * Variable globale
 * ⌛ function désormais block-scoped
@@ -101,16 +101,8 @@ note:
         hello() {
             return `Hello ${this.name}`
         }
-
-        get yodaName() {
-            return this.name.split('').reverse().join('')
-        }
-
-        set yodaName(v) {
-            this.name = v.split('').reverse().join('')
-        }
     }
-    new Actor('Frank Oz').yodaName
+    new Actor('Frank Oz').hello()
 }
 ```
 ---
@@ -130,6 +122,28 @@ note:
 * `extends`, `super`
 * ⌛ object literals `[ "name" + foo() ]: 42`
 
+```javascript
+{
+    class Actor {
+        constructor(name) {
+            this.name = name
+        }
+
+        hello() {
+            return `Hello ${this.name}`
+        }
+
+        get yodaName() {
+            return this.name.split('').reverse().join('')
+        }
+
+        set yodaName(v) {
+            this.name = v.split('').reverse().join('')
+        }
+    }
+    new Actor('Frank Oz').yodaName
+}
+```
 ---
 
 🧘🏽
@@ -139,9 +153,12 @@ note:
 ## Modules
 
 * _n_ fichiers de script = _n_ balises `<script>` 😞
+* Visibilité
 * Risque de collision de noms (librairies)
-* Utilisation d'un bundler (webpack...)
-
+* Solutions 😞 :
+    * Utilisation d'un bundler (webpack...) 
+    * `(function(){})()`
+    
 note:
 * Organiser une grande codebase
 
@@ -151,7 +168,7 @@ note:
 
 * 👍 Modules ES
     * `import`, `export`
-* Supporté par les navigateurs 
+* Bien supporté
 * Mode strict par défaut
 
 note:
@@ -179,14 +196,15 @@ note:
 
 ## Arrow functions
 
-* Simplifier les déclarations anonymes
-* `function(x) {}` devient 👍 `(x) =>`
+* Simplifier les déclarations à la volée
+* `function(x) {}` ➡ `(x) => ...` 👍
 
 ---
 
 👨🏽‍💻
 
 note:
+* Comportement quasi-identique
 * 💻 `Array.map` avec `function (x) { }` (Acteurs)
     * Version avec  `() =>`
     * filter, forEach
@@ -196,9 +214,10 @@ note:
 
 ## Lexical `this`
 
-* Eviter la perte du contexte
+* Eviter la perte du contexte 👍
   
 note:
+* Comportement quasi-identique
 * `this` = contexte exec. function 
   
 ---
@@ -288,7 +307,7 @@ note:
 * Rest `...`
     * 💻 `generique()` réalisateur, producteur, ...acteurs
 * Spread `...`
-    * 💻 passer une liste
+    * 💻 passer une liste à `generique()`
     * 🎁 Utiliser un Set
 * Concaténation de listes `[a, b, ...list]`
     * Clonage `[...list]`
@@ -307,7 +326,7 @@ note:
   
   générique('Irvin Kershner', 'George Lucas', 'Mark Hamill', 'Carrie Fisher', 'Harrison Ford')
 
-  let whoSwho = new Set(['Irvin Kershner', 'George Lucas', 'Mark Hamill', 'Carrie Fisher', 'Harrison Ford'])
+  let whoSwho = new Set(['Irvin Kershner', 'George Lucas', 'Mark Hamill', 'Carrie Fisher', 'Harrison Ford', 'George Lucas'])
   générique(...whoSwho)
 }
 
@@ -447,6 +466,12 @@ note:
 ---
 
 # 💬
+
+---
+
+## R.O.T.I.
+
+<https://framaforms.org/roti-js-esnext-1526642510>
 
 ---
 
