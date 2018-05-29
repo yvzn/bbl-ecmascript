@@ -45,7 +45,9 @@ note:
 
 note:
 * C'est quoi ces versions ?
-
+    * Normalisation JS1.5 ➡ ES5
+    * Passage à un versionning par année
+    * ES.Next = prochaine version
 ---
 
 <!-- .slide: data-background-image="resource/cat.jpg" class="dark-bg" -->
@@ -112,6 +114,8 @@ note:
 * Propriétés
 * Héritage
 
+note:
+* Héritage simple uniqt. (une seule superclasse)
 ---
 
 👨🏽‍💻
@@ -154,7 +158,7 @@ note:
 
 * _n_ fichiers de script = _n_ balises `<script>` 😞
 * Visibilité
-* Risque de collision de noms (librairies)
+* Collision de noms (entre librairies)
 * Solutions 😞 :
     * Utilisation d'un bundler (webpack...) 
     * `(function(){})()`
@@ -354,6 +358,9 @@ note:
 * Formalisation des promesses (lib. `$q`)
 * Prog. asynchrone (vs. monothread)
 
+note:
+* Navigateur monothread (performances / sécurité)
+* Asynchrone = ne pas freezer l'UI
 ---
 
 👨🏽‍💻
