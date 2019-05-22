@@ -13,10 +13,8 @@ ajouté en tant que submodule git au projet.
 Pour récupérer le code source
 
 ```bash
-$ git clone https://github.com/yvzn/bbl-ecmascript.git
-$ cd bbl-ecmascript
-$ git submodule init
-$ git submodule update
+$ git clone --recurse-submodules https://github.com/yvzn/bbl-azure-serverless.git
+$ cd bbl-azure-serverless
 ```
 
 ## Démarrage
@@ -33,7 +31,7 @@ Autre solution (avec Python)
 $ python -m http.server 8080
 ```
 
-Puis ouvrir <http://localhost:8080/?showNotes=separate-page> dans le navigateur
+Puis ouvrir <http://127.0.0.1:8080/?showNotes=separate-page> dans le navigateur
 
 Ou pour la version imprimable <http://127.0.0.1:8080/?print-pdf&showNotes=separate-page>
 
